@@ -1,0 +1,15 @@
+Excersice 0.6
+
+```mermaid
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    server-->>browser: HTTP 201 (Created).
+    deactivate server
+
+    Note right of browser: The browser send the note (date and content) as JSON to the server. Header "Content-Type" spicified this.
+    Note right of server: The server process the request and show a message as response. Also the page is realoaded to show the changes. There is no redirection here.
+```
